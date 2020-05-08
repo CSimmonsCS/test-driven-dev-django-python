@@ -1,4 +1,4 @@
-from fabric.contrib.files import appends, exists, sed
+from fabric.contrib.files import append, exists, sed
 from fabric.api import env, local, run
 import random
 
@@ -16,7 +16,7 @@ def deploy():
 
 def _create_directory_structure_if_necessary(site_folder):
     for subfolder in ('database', 'static', 'virtualenv', 'source'):
-        run(f'mkdir -p {site_folder}/{subfolder})
+        run(f'mkdir -p {site_folder}/{subfolder}')
 
 def _get_latest_source(source_folder):
     if exists(source_folder + '/.git'):
