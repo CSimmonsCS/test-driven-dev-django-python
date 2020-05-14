@@ -16,7 +16,7 @@ class ItemValidationTest(FunctionalTest):
         ))
 
         #She starts typing some text for the new item and the error appears
-        self.get_item_input_box().send_keys('Buy Milk')
+        self.get_item_input_box().send_keys('Buy milk')
         self.wait_for(lambda: self.browser.find_element_by_css_selector(
             '#id_text:valid'
         ))
