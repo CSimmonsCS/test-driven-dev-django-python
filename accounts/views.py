@@ -36,7 +36,7 @@ def login(request):
     # if user is not None:
     #     auth.login(request, user)
     user = PasswordlessAuthenticationBackend().authenticate(uid=request.GET.get('token'))
-    print(user)
+    # print(user)
     if user:
         auth.login(request, user)
     return redirect('/')

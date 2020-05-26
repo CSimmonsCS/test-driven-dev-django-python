@@ -21,10 +21,9 @@
 from accounts.models import User, Token
 from django.contrib.auth.backends import ModelBackend
 
-class PasswordlessAuthenticationBackend(ModelBackend):
+class PasswordlessAuthenticationBackend(object):
 
     def authenticate(self, uid):
-        print('test')
         try:
             token = Token.objects.get(uid=uid)
             return User.objects.get(email=token.email)
